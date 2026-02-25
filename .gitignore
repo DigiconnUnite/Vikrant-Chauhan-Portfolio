@@ -1,0 +1,6 @@
+# Add sensitive files to .gitignore
+config/smtp_config.php
+vendor/
+composer.lock
+.env
+*.log

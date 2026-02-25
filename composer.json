@@ -1,0 +1,11 @@
+{
+    "name": "vikrant-chaudhary/portfolio",
+    "description": "Vikrant Chauhan Portfolio Website",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

@@ -1,0 +1,108 @@
+=====================================================
+  QUICK START GUIDE - SMTP Email Setup
+=====================================================
+
+Follow these 5 simple steps to get your contact form working:
+
+STEP 1: Install PHPMailer
+--------------------------
+Open terminal/command prompt in your project folder and run:
+
+    composer install
+
+This will download PHPMailer and create the "vendor" folder.
+
+
+STEP 2: Configure SMTP Settings
+--------------------------------
+Open file: config/smtp_config.php
+
+Update these lines with YOUR email settings:
+
+For Gmail:
+    define('SMTP_HOST', 'smtp.gmail.com');
+    define('SMTP_USERNAME', 'your-email@gmail.com');
+    define('SMTP_PASSWORD', 'your-app-password');
+    define('ADMIN_EMAIL', 'your-email@gmail.com');
+
+IMPORTANT FOR GMAIL:
+- You MUST use an "App Password", not your regular password
+- Enable 2-Step Verification first
+- Generate App Password at: https://myaccount.google.com/apppasswords
+- Select: App = Mail, Device = Other
+- Copy the 16-character password (remove spaces)
+
+
+STEP 3: Test Locally
+---------------------
+1. Start your local server (XAMPP/MAMP/WAMP)
+2. Go to: http://localhost/your-project/contact.php
+3. Fill out the form and click "Send Message"
+4. Check your admin email inbox
+
+
+STEP 4: Troubleshooting
+------------------------
+If emails not sending:
+
+1. Enable debug mode in config/smtp_config.php:
+   define('SMTP_DEBUG', 2);
+
+2. Check browser console for errors
+
+3. Common issues:
+   - Wrong username/password
+   - Gmail: Not using App Password
+   - Gmail: 2-Step Verification not enabled
+   - Firewall blocking port 587
+   - SMTP settings incorrect
+
+4. Set debug back to 0 after fixing:
+   define('SMTP_DEBUG', 0);
+
+
+STEP 5: Deploy to Live Server
+------------------------------
+1. Upload all files to your server
+2. Update config/smtp_config.php with live server SMTP settings
+3. Make sure server allows outbound SMTP (port 587 or 465)
+4. Test the contact form on live site
+
+
+=====================================================
+  FILES CREATED:
+=====================================================
+
+✓ config/smtp_config.php       - SMTP settings (CONFIGURE THIS!)
+✓ send_email.php                - Email handler (no changes needed)
+✓ contact.php                   - Updated contact form
+✓ composer.json                 - Dependencies
+✓ SETUP_INSTRUCTIONS.md         - Detailed setup guide
+✓ .gitignore                    - Security (don't commit passwords)
+
+
+=====================================================
+  QUICK TEST CHECKLIST:
+=====================================================
+
+□ Composer installed
+□ Run "composer install"
+□ Updated smtp_config.php with your email
+□ Gmail App Password generated (if using Gmail)
+□ Test email sent successfully
+□ Success message shown in browser
+□ Email received in admin inbox
+□ Reply-To working (can reply to user directly)
+
+
+=====================================================
+  NEED HELP?
+=====================================================
+
+1. Read SETUP_INSTRUCTIONS.md for detailed guide
+2. Check troubleshooting section above
+3. Enable SMTP_DEBUG = 2 to see detailed errors
+4. Contact support: support@vikrantchauhan.com
+
+
+Last Updated: January 21, 2026
